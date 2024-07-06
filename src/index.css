@@ -9,3 +9,7 @@
 .scrollable-div.scrollable-div::-webskit-sc {
     display: none;
 }
+
+body {
+    overflow: hidden;
+}
