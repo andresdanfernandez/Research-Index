@@ -1,7 +1,7 @@
 
 const button = <button className="pr-3 pl-3 text-sm">Add</button>;
 
-function Todo(props) {
+function Home(props) {
     return (
         <div className="scrollable-div overflow-auto bg-secondary place-self-center w-11/12 max-w-md flex flex-col p-7 max  max-h-96 rounded-xl">
             <div className="flex justify-between">
@@ -21,4 +21,4 @@ function Todo(props) {
     )
 }
 
-export default Todo;
+export default Home;

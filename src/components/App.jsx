@@ -1,5 +1,4 @@
-import Todo from "./Todo";
-import Login from "./Login";
+import Home from "./Home";
 
 function App() {
   
@@ -11,12 +10,9 @@ function App() {
         </div>
       
         <div className="bg-stone-900 grid grid-cols-2 mt-14 ">
-          <Todo title="Read Papers" />
-          <Todo title="Add Papers"/>
+          <Home title="Read Papers" />
+          <Home title="Add Papers"/>
         </div>
-
-        <Login/>
-
       </div>
     </>
   )
