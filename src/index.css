@@ -6,10 +6,6 @@
     scrollbar-width: none;
 }
 
-.scrollable-div.scrollable-div::-webskit-sc {
-    display: none;
-}
-
 body {
     background-color: #1c1917;
     min-height: 100vh;

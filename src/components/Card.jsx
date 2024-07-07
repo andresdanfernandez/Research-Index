@@ -2,7 +2,7 @@ const button = <button className="pr-3 pl-3 text-sm">Add</button>;
 
 function Card(props) {
     return (
-            <div className="scrollable-div overflow-auto bg-secondary place-self-center w-11/12 max-w-md flex flex-col p-7 max  max-h-96 rounded-xl">
+            <div className="scrollable-div border-2 overflow-auto bg-secondary place-self-center w-11/12 max-w-md flex flex-col p-7 max-h-96 rounded-xl">
                 <div className="flex justify-between">
                     <h1 className="text-2xl font-bold block text-slate-300">{props.title}</h1>
                     <div className="flex justify-center items-center bg-stone-900 hover:bg-stone-800 rounded text-slate-300" >
