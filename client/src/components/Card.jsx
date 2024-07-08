@@ -1,7 +1,8 @@
 import {useState} from "react";
 import Field from "./Field";
+import FieldWrapper from "./FieldWrapper";
 
-const button = <button className="pr-3 pl-3 text-sm hover:bg-stone-800 ">Add</button>;
+const button = <button className="pr-3 pl-3 text-sm hover:bg-stone-800">Add</button>;
 
 function Card(props) {
 
@@ -14,9 +15,8 @@ function Card(props) {
                     </div>
                 </div>
 
-                <div className="flex flex-col flex-wrap gap-2 pt-2 text-sm text-slate-300" >
-                    <Field url="https://google.com"/>
-                    <Field url="https://youtube.com" />
+                <div className="flex flex-col flex-wrap gap-2 pt-2 text-sm text-stone-300" >
+                   <FieldWrapper field={<Field url="google.com"/>} showCheckmark={props.title === "To-Read Papers"} />
                 </div>
 
             </div>
