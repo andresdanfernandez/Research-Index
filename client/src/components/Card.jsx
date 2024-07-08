@@ -40,8 +40,6 @@ function Card(props) {
                             </div>
                         )}
                 </div>
-
-                <div className="flex flex-col gap-2 pt-2 text-sm text-stone-300">
                     {fields.map((field,index) => (
                         <FieldWrapper 
                             key={index}
@@ -49,7 +47,6 @@ function Card(props) {
                             showCheckmark = {props.title === "To-Read"}
                         />
                     ))}
-                </div>
             </div>
     )
 }
