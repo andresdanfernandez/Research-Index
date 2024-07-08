@@ -1,19 +1,21 @@
-const button = <button className="pr-3 pl-3 text-sm">Add</button>;
+const button = <button className=" pr-3 pl-3 text-sm hover:bg-stone-800 ">Add</button>;
 
 function Card(props) {
     return (
-            <div className="scrollable-div border-2 border-stone-300 overflow-auto bg-secondary place-self-center w-11/12 max-w-md flex flex-col p-7 max-h-96 rounded-xl">
+            <div className="scrollable-div overflow-auto bg-secondary place-self-center w-11/12 max-w-md flex flex-col p-7 h-96 rounded-xl">
                 <div className="flex justify-between">
                     <h1 className="text-2xl font-bold block text-slate-300">{props.title}</h1>
-                    <div className="flex justify-center items-center bg-stone-900 hover:bg-stone-800 rounded text-slate-300" >
+                    <div className="flex justify-center items-center bg-stone-900 hover:bg-stone-800 cursor-pointer rounded text-slate-300" >
                         {props.title === "Add Papers" && button}
                     </div>
                 </div>
-                <div className="text-field pt-2 text-md text-slate-300" >
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum hic iure voluptates reiciendis ab eveniet consequuntur, odio odit commodi ratione? Eos repudiandae iusto magnam atque iure sequi obcaecati quia fuga!</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum hic iure voluptates reiciendis ab eveniet consequuntur, odio odit commodi ratione? Eos repudiandae iusto magnam atque iure sequi obcaecati quia fuga!</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum hic iure voluptates reiciendis ab eveniet consequuntur, odio odit commodi ratione? Eos repudiandae iusto magnam atque iure sequi obcaecati quia fuga!</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum hic iure voluptates reiciendis ab eveniet consequuntur, odio odit commodi ratione? Eos repudiandae iusto magnam atque iure sequi obcaecati quia fuga!</p>
+                <div className="flex flex-col gap-2 text-field pt-2 text-sm text-slate-300" >
+                    <div className="paper border-2" >
+                        <h2>Example URL</h2>
+                    </div>
+                    <div className="paper border-2" >
+                        <h2>Example URL</h2>
+                    </div>
                 </div>
             </div>
     )

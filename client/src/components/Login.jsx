@@ -1,7 +1,7 @@
 function Login() {
     return (
     <div className="flex justify-center items-center max-h-96 mt-16">
-      <div className="bg-secondary p-8 border-2 border-stone-300 rounded-lg shadow-md w-96 ">
+      <div className="bg-secondary p-8 rounded-lg shadow-md w-96 ">
         <h1 className="text-2xl text-stone-300 font-bold mb-6 text-center">Login</h1>
         <form>
           <div className="mb-4">
@@ -11,8 +11,8 @@ function Login() {
             <input
               type="email"
               id="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-blue-100"
-              placeholder="Enter your email"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-stone-100"
+              placeholder="Email"
               required
             />
           </div>
@@ -23,8 +23,8 @@ function Login() {
             <input
               type="password"
               id="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-blue-100"
-              placeholder="Enter your password"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-stone-100"
+              placeholder="Password"
               required
             />
           </div>
