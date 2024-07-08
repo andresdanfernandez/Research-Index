@@ -10,13 +10,13 @@ function Card(props) {
                 <div className="flex justify-between">
                     <h1 className="text-2xl font-bold block text-slate-300">{props.title}</h1>
                     <div className="flex justify-center items-center bg-stone-900 hover:bg-stone-800 cursor-pointer rounded text-slate-300" >
-                        {props.title === "Add Papers" && button}
+                        {props.title === "To-Read Papers" && button}
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-2 pt-2 text-sm text-slate-300" >
-                    <Field/>
-                    <Field/>
+                <div className="flex flex-col flex-wrap gap-2 pt-2 text-sm text-slate-300" >
+                    <Field url="https://google.com"/>
+                    <Field url="https://youtube.com" />
                 </div>
 
             </div>
