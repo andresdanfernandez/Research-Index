@@ -11,7 +11,7 @@ function Login() {
             <input
               type="email"
               id="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-stone-100"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none"
               placeholder="Email"
               required
             />
@@ -23,7 +23,7 @@ function Login() {
             <input
               type="password"
               id="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-stone-100"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none"
               placeholder="Password"
               required
             />

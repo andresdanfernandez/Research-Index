@@ -41,7 +41,7 @@ function Card(props) {
                         )}
                 </div>
 
-                <div className="flex flex-col flex-wrap gap-2 pt-2 text-sm text-stone-300">
+                <div className="flex flex-col gap-2 pt-2 text-sm text-stone-300">
                     {fields.map((field,index) => (
                         <FieldWrapper 
                             key={index}
@@ -50,9 +50,6 @@ function Card(props) {
                         />
                     ))}
                 </div>
-
-            
-
             </div>
     )
 }
