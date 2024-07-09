@@ -5,7 +5,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 function FieldWrapper(props) {
     return (
         <div className="text-stone-300 flex border rounded justify-between items-center pl-2 pt-1 pb-1 pr-2 mt-4 w-full max-w-md ">
-            <div className="scrollable-div overflow-auto whitespace-nowrap  w-80">
+            <div className="scrollable-div overflow-auto whitespace-nowrap w-80">
                 {props.field}
             </div>
             <div className="flex gap-4">
@@ -14,7 +14,7 @@ function FieldWrapper(props) {
                         <FontAwesomeIcon icon={faCheck} />
                     </button>
                 )}
-                <button>
+                <button onClick={props.onDelete}>
                     <FontAwesomeIcon icon={faXmark} />
                 </button>
             </div>
