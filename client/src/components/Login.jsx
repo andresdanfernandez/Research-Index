@@ -1,7 +1,7 @@
 function Login() {
     return (
     <div className="flex justify-center items-center max-h-96 mt-16">
-      <div className="bg-secondary p-8 rounded-lg shadow-md w-96 ">
+      <div className="bg-secondary p-8 rounded-lg shadow-md h-96 w-[450px] min-w-[350] ">
         <h1 className="text-2xl text-stone-300 font-bold mb-6 text-center">Login</h1>
         <form>
           <div className="mb-4">
