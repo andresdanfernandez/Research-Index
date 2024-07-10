@@ -3,9 +3,15 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 
-function Field(props) {
+function Field({url}) {
     return (
-        <a target="_blank" className="underline text-blue-400 text-[15px]" href={props.url}>{props.url}</a>       
+        <a 
+            target="_blank" 
+            className={"underline text-[15px] text-blue-400"}
+            href={url}
+        >
+            {url}
+        </a>       
     )
 }
 

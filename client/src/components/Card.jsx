@@ -2,16 +2,13 @@
     import Field from "./Field";
     import FieldWrapper from "./FieldWrapper";
 
-    function Card(props) {
+    function Card({title, fields, setFields, onMove }) {
 
         const [url, setUrl] = useState("");
-        const [fields, setFields] = useState([]);
-        console.log(fields);
 
         const handleDelete = (index) => {
             setFields(fields.filter((_,i) => i !== index));
         };
-
 
         const handleAddUrl = () => {
             if (url.trim() != "") {
@@ -24,8 +21,8 @@
         return (
                 <div className="scrollable-div overflow-auto bg-secondary place-self-center w-11/12 max-w-lg flex flex-col p-7 h-[500px] max-h-[500px] rounded-xl">
                     <div className="flex justify-between items-center">
-                        <h1 className="text-4xl font-bold block text-slate-300">{props.title}</h1>
-                            {props.title === "To-Read" && (
+                        <h1 className="text-4xl font-bold block text-slate-300">{title}</h1>
+                            {title === "To-Read" && (
                                 <div className="flex items-center justify-center" >
                                     <input 
                                         type="text" 
@@ -47,8 +44,9 @@
                             <FieldWrapper 
                                 key={index}
                                 field={<Field url={field}/>}
-                                showCheckmark = {props.title === "To-Read"}
+                                showCheckmark = {title === "To-Read"}
                                 onDelete={() => handleDelete(index)}
+                                onMove={() => onMove && onMove(index)}
                             />
                         ))}
                 </div>
