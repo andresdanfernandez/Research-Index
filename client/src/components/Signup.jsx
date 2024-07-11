@@ -76,7 +76,7 @@ function Signup() {
         </form>
         <br/>
         <div className="flex float-right underline text-slate-300" >
-          <Link to="/login">Login</Link>
+          <Link to="/">Login</Link>
         </div>
         
       </div>
