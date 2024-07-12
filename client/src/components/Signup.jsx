@@ -3,8 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 function Signup() {
 
-  const history = useNavigate();
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,10 +15,16 @@ function Signup() {
         email, password
       });
       
-      if (response.data === "exist") {
+      if (response.data.status === "exist") {
         alert("User already has an account");
-      } else if (response.data === "success") {
-        navigate("/home");
+      } else if (response.data.status === "success") {
+        localStorage.setItem("userId", response.data.userId);
+        navigate("/home", {
+          state: {
+            doneReading: response.data.doneReading,
+            toRead: response.data.toRead
+          }
+        });
       } else {
         alert("Signup failed");
       }

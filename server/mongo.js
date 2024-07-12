@@ -12,12 +12,15 @@ mongoose.connect(process.env.URI)
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
         required: true
-    }
+    },
+    doneReading: [String],
+    toRead: [String]
 })
 
 const User = mongoose.model("User", userSchema);

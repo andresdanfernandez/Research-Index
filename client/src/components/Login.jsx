@@ -4,7 +4,6 @@ import axios from "axios";
 function Login() {
 
   const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,11 +15,17 @@ function Login() {
         email, password
       });
       
-      if (response.data === "success") {
-        navigate("/home");
-      } else if (response.data === "notexist") {
+      if (response.data.status === "success") {
+        localStorage.setItem("userId", response.data.userId);
+        navigate("/home", {
+          state: {
+            doneReading: response.data.doneReading,
+            toRead: response.data.toRead
+          }
+        });
+      } else if (response.data.status === "notexist") {
         alert("User has not signed up");
-      } else if (response.data === "incorrect password") {
+      } else if (response.data.status === "incorrect password") {
         alert("Incorrect password");
       } else {
         alert("Login failed");
