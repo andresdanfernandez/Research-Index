@@ -10,27 +10,22 @@ function Signup() {
 
   async function submit(e) {
     e.preventDefault();
-
+  
     try {
+      const response = await axios.post("http://localhost:8000/signup", {
+        email, password
+      });
       
-        await axios.post("http://localhost:8000/signup", {
-          email,password
-        })
-        .then(res => {
-          if(res.data == "exist") {
-            alert("User already has an account");
-          }
-          else if (res.data == "notexist") {
-            history("/home");
-          }
-        })
-        .catch(e => {
-          alert("wrong credentials");
-          console.log(e);
-        })
-
-    } catch(e) {
-        console.log(e);
+      if (response.data === "exist") {
+        alert("User already has an account");
+      } else if (response.data === "success") {
+        navigate("/home");
+      } else {
+        alert("Signup failed");
+      }
+    } catch (e) {
+      console.error("Signup error:", e);
+      alert("An error occurred during signup");
     }
   }
 
@@ -39,7 +34,7 @@ function Signup() {
     <div className="flex justify-center items-center max-h-96 mt-16">
       <div className="bg-secondary p-8 rounded-lg shadow-md h-96 w-[450px] min-w-[350] ">
         <h1 className="text-3xl text-stone-300 font-bold mb-6 text-center">Sign up</h1>
-        <form action="POST">
+        <form>
           <div className="mb-4">
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-stone-300">
               Email
@@ -67,7 +62,7 @@ function Signup() {
             />
           </div> 
           <button
-            type="submit"
+            type="button"
             onClick={submit}
             className="w-full bg-blue-500 text-stone-100 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
           >
