@@ -9,7 +9,7 @@ mongoose.connect(process.env.URI)
         console.log("failed");
     })
 
-const newSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
@@ -20,6 +20,6 @@ const newSchema = new mongoose.Schema({
     }
 })
 
-const collection = mongoose.model("collection", newSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports = collection
+module.exports = User;

@@ -1,5 +1,5 @@
 const express = require("express");
-const collection = require("./mongo");
+const User = require("./mongo");
 const cors = require("cors");
 const app = express();
 app.use(express.json());
@@ -17,7 +17,7 @@ app.post("/login", async(req,res) => {
 
     try {
         // check if email already exist
-        const user = await collection.findOne({email:email});
+        const user = await User.findOne({email:email});
         if(user) {
             res.json("exist");
         } else {
@@ -38,13 +38,13 @@ app.post("/signup", async(req,res) => {
 
     try {
         // check if email already exist
-        const user = await collection.findOne({email:email});
+        const user = await User.findOne({email:email});
 
         if(user) {
             res.json("exist");
         } else {
             res.json("notexist");
-            await collection.insertMany([data]);
+            await User.insertMany([data]);
 
         }
     } catch(e) {
