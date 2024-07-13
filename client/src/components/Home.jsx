@@ -1,10 +1,11 @@
 import Card from "./Card";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 function Home() {
 
     const location = useLocation();
+    const navigate = useNavigate();
     const [toReadFields, setToReadFields] = useState(location.state?.toRead || []);
     const [doneReadingFields, setDoneReadingFields] = useState(location.state?.doneReading || []);
 
@@ -34,20 +35,35 @@ function Home() {
         updateDatabase(doneReadingFields, toReadFields);
     }, [doneReadingFields, toReadFields]);
 
+    const handleLogout = () => {
+        localStorage.removeItem("userId");
+        navigate("/");
+    }
+
     return (
-        <div className="grid grid-cols-2 mt-[70px] bg-stone-900 " >
-            <Card 
-                title="Done Reading"
-                fields={doneReadingFields}
-                setFields={setDoneReadingFields}
-            />
-            <Card 
-                title="To-Read" 
-                fields={toReadFields}
-                setFields={setToReadFields}
-                onMove={handleMove}
-            /> 
-        </div>
+        <>
+            <div className="flex justify-center mt-10 " >
+                <button
+                    onClick={handleLogout}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    >
+                    Logout and Save
+                </button>
+            </div>
+            <div className="grid grid-cols-2 mt-[40px] bg-stone-900 " >
+                <Card 
+                    title="Done Reading"
+                    fields={doneReadingFields}
+                    setFields={setDoneReadingFields}
+                />
+                <Card 
+                    title="To-Read" 
+                    fields={toReadFields}
+                    setFields={setToReadFields}
+                    onMove={handleMove}
+                />
+            </div>
+        </>
     )
 }
 
