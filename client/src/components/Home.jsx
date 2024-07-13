@@ -52,7 +52,7 @@ function Home() {
             </div>
             <div className="grid grid-cols-2 mt-[40px] bg-stone-900 " >
                 <Card 
-                    title="Done Reading"
+                    title="Read"
                     fields={doneReadingFields}
                     setFields={setDoneReadingFields}
                 />
