@@ -7,11 +7,12 @@ app.use(express.urlencoded({extended: true}));
 
  app.use(cors({
      origin: "https://research-index-frontend.vercel.app",
-     methods: ["POST", "GET"],
-     credentials: true
+     methods: ["POST", "GET", "OPTIONS"],
+     credentials: true,
+     allowedHeaders: ["Content-Type", "Authorization"]
  }));
 
-
+app.options("*", cors());
 app.use(express.json());
 
 require('dotenv').config();
