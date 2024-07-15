@@ -3,21 +3,29 @@ const User = require("./mongo");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const app = express();
-app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({
-    origin: "http://localhost:5173"
-}));
+
+ app.use(cors({
+     origin: "http://localhost:5173",
+     methods: ["POST"],
+     credentials: true
+ }));
+
+
+app.use(express.json());
 
 require('dotenv').config();
 const PORT = process.env.PORT || 8000;
 
 
+app.get("/", (req,res) => {
+    res.json("Hello");
+})
+
 app.post("/login", async(req,res) => {
     const{email,password} = req.body;
 
     try {
-        // check if email already exist
         const user = await User.findOne({email:email});
         if(user) {
             const isMatch = await bcrypt.compare(password, user.password);
