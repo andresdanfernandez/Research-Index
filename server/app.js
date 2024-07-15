@@ -24,6 +24,7 @@ app.get("/", (req,res) => {
 })
 
 app.post("/login", async(req,res) => {
+    res.header('Access-Control-Allow-Credentials', true);
     const{email,password} = req.body;
 
     try {

@@ -19,6 +19,8 @@ function Home() {
     };
 
     const updateDatabase = async (doneReading, toRead) => {
+        axios.defaults.withCredentials = true;
+        axios.defaults.baseURL = "https://research-index-api.vercel.app";
         try {
             const userId = localStorage.getItem('userId');
             await axios.post("https://research-index-api.vercel.app/updateFields", {
