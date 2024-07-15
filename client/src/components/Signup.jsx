@@ -68,7 +68,7 @@ function Signup() {
             />
           </div> 
           <button
-            type="button"
+            type="submit"
             onClick={submit}
             className="w-full bg-blue-500 text-stone-100 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
           >
