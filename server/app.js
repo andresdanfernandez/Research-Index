@@ -49,6 +49,7 @@ app.post("/login", async(req,res) => {
 })
 
 app.post("/signup", async(req,res) => {
+    console.log("Hit sign up route");
     const{email,password} = req.body;
     try {
         const existingUser = await User.findOne({email: email});
@@ -87,3 +88,5 @@ app.post("/updateFields", async(req, res) => {
         res.json({status: "fail"});
     }
 });
+
+module.exports = app;
