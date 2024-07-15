@@ -11,7 +11,7 @@ function Signup() {
     e.preventDefault();
   
     try {
-      const response = await axios.post("https://research-index-api.vercel.app/signup", {
+      const response = await axios.post("https://research-index-api-git-main-andresdanfernandezs-projects.vercel.app/signup", {
         email, password
       });
       

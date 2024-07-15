@@ -12,10 +12,10 @@ function Login() {
   async function submit(e) {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    axios.defaults.baseURL = "https://research-index-api.vercel.app";
+    axios.defaults.baseURL = "https://research-index-api-git-main-andresdanfernandezs-projects.vercel.app";
 
     try {
-      const response = await axios.post("https://research-index-api.vercel.app/login", {
+      const response = await axios.post("https://research-index-api-git-main-andresdanfernandezs-projects.vercel.app/login", {
         email, password
       });
       
