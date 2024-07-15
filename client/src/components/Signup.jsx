@@ -26,11 +26,11 @@ function Signup() {
           }
         });
       } else {
-        alert("Signup failed");
+        alert("Signup failed" + (response.data.message || "Unknown Error"));
       }
     } catch (e) {
       console.error("Signup error:", e);
-      alert("An error occurred during signup");
+      alert("An error occurred during signup" + (e.response?.data?.message || e.message));
     }
   }
 

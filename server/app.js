@@ -55,7 +55,7 @@ app.post("/signup", async(req,res) => {
         const existingUser = await User.findOne({email: email});
 
         if(existingUser) {
-            res.json("exist");
+            res.json({status: "exist"});
         } else {
             
             const hashedPassword = await bcrypt.hash(password, 10);
@@ -74,7 +74,8 @@ app.post("/signup", async(req,res) => {
             });
         }
     } catch(e) {
-        res.json("fail");
+        res.json("signup error ", e);
+        res.status(500).json({ status: "fail", message: e.message });
     }
 });
 
