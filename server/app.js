@@ -16,7 +16,6 @@ app.options("*", cors());
 app.use(express.json());
 
 require('dotenv').config();
-const PORT = process.env.PORT || 8000;
 
 
 app.get("/", (req,res) => {
@@ -86,8 +85,4 @@ app.post("/updateFields", async(req, res) => {
     } catch(e) {
         res.json({status: "fail"});
     }
-});
-
-app.listen(PORT, () => {
-    console.log("connected port 8000");
 });
