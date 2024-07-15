@@ -9,7 +9,6 @@ function Signup() {
 
   async function submit(e) {
     e.preventDefault();
-    axios.defaults.withCredentials = true;
     axios.defaults.baseURL = "https://research-index-api.vercel.app";
   
     try {
