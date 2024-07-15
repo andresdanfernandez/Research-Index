@@ -21,7 +21,7 @@ function Home() {
     const updateDatabase = async (doneReading, toRead) => {
         try {
             const userId = localStorage.getItem('userId');
-            await axios.post("http://localhost:8000/updateFields", {
+            await axios.post("https://research-index-api.vercel.app/updateFields", {
                 userId,
                 doneReading,
                 toRead
