@@ -15,7 +15,7 @@ function Login() {
     axios.defaults.baseURL = "https://research-index-api.vercel.app";
 
     try {
-      const response = await axios.post("https://research-index-api.vercel.app/login", {
+      const response = await axios.post("/login", {
         email, password
       });
       
