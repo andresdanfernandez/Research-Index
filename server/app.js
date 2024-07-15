@@ -50,6 +50,7 @@ app.post("/login", async(req,res) => {
 })
 
 app.post("/signup", async(req,res) => {
+    res.header('Access-Control-Allow-Credentials', true);
     const{email,password} = req.body;
     try {
         const existingUser = await User.findOne({email: email});
