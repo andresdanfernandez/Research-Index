@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended: true}));
  app.use(cors({
      origin: "https://research-index-frontend.vercel.app",
      methods: ["POST", "GET", "OPTIONS"],
-     credentials: false,
+     credentials: true,
      allowedHeaders: ["Content-Type", "Authorization"]
  }));
 
