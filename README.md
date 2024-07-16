@@ -8,5 +8,5 @@ Research Index is a web application that allows users to store, organize, and ke
 - **Backend**: Node.js
 - **Database**: MongoDB
 - **Hosting**: Vercel
-- 
+
 You can find the link here [Research Index](https://research-index-frontend.vercel.app/)
