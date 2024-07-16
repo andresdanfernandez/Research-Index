@@ -9,11 +9,10 @@ function Signup() {
 
   async function submit(e) {
     e.preventDefault();
-    axios.defaults.baseURL = "https://research-index-api.vercel.app";
     console.log("in submit function in signup");
   
     try {
-      const response = await axios.post("/signup", {
+      const response = await axios.post("https://research-index-api.vercel.app/signup", {
         email, password
       });
       

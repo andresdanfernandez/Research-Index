@@ -7,15 +7,11 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  axios.defaults.withCredentials = true;
-
   async function submit(e) {
     e.preventDefault();
-    axios.defaults.withCredentials = true;
-    axios.defaults.baseURL = "https://research-index-api.vercel.app";
 
     try {
-      const response = await axios.post("/login", {
+      const response = await axios.post("https://research-index-api.vercel.app/login", {
         email, password
       });
       
