@@ -41,29 +41,29 @@ function Home() {
     }
 
     return (
-        <>
-            <div className="flex justify-center mt-10 " >
+        <div className="min-h-screen bg-stone-900 p-4">
+            <div className="flex justify-center mt-4 mb-8">
                 <button
                     onClick={handleLogout}
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                    >
+                >
                     Logout and Save
                 </button>
             </div>
-            <div className="grid grid-cols-2 mt-[40px] bg-stone-900 " >
-                <Card 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                <Card
                     title="Read"
                     fields={doneReadingFields}
                     setFields={setDoneReadingFields}
                 />
-                <Card 
-                    title="To-Read" 
+                <Card
+                    title="To-Read"
                     fields={toReadFields}
                     setFields={setToReadFields}
                     onMove={handleMove}
                 />
             </div>
-        </>
+        </div>
     )
 }
 

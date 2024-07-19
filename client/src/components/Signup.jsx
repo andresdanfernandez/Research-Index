@@ -37,10 +37,10 @@ function Signup() {
 
 
     return (
-    <div className="flex justify-center items-center max-h-96 mt-16">
-      <div className="bg-secondary p-8 rounded-lg shadow-md h-96 w-[450px] min-w-[350] ">
-        <h1 className="text-3xl text-stone-300 font-bold mb-6 text-center">Sign up</h1>
-        <form>
+    <div className="flex justify-center items-center min-h-screen p-4 bg-stone-900">
+      <div className="bg-secondary p-6 sm:p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 className="text-2xl sm:text-3xl text-stone-300 font-bold mb-6 text-center">Sign up</h1>
+        <form onSubmit={submit}>
           <div className="mb-4">
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-stone-300">
               Email
@@ -48,10 +48,10 @@ function Signup() {
             <input
               type="email"
               id="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none text-black"
               placeholder="Email"
               required
-              onChange={(e) => {setEmail(e.target.value)}}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-6">
@@ -61,25 +61,24 @@ function Signup() {
             <input
               type="password"
               id="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none text-black"
               placeholder="Password"
               required
-              onChange={(e) => {setPassword(e.target.value)}}
+              onChange={(e) => setPassword(e.target.value)}
             />
-          </div> 
+          </div>
           <button
             type="submit"
-            onClick={submit}
             className="w-full bg-blue-500 text-stone-100 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
           >
             Sign Up
           </button>
         </form>
-        <br/>
-        <div className="flex float-right underline text-slate-300" >
-          <Link to="/">Login</Link>
+        <div className="mt-4 text-right">
+          <Link to="/" className="text-sm text-slate-300 hover:text-slate-100 underline">
+            Login
+          </Link>
         </div>
-        
       </div>
     </div>
     )
